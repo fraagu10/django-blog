@@ -1,14 +1,33 @@
+# Python
+*.pyc
+*~
+__pycache__
+
+# Env
+.env
+myvenv/
+venv/
 .venv/
 
-*.pyc
-__pycache__/
+# Database
+db.sqlite3
 
-instance/
+# Static folder at project root
+/static/
 
-.pytest_cache/
-.coverage
-htmlcov/
+# macOS
+._*
+.DS_Store
+.fseventsd
+.Spotlight-V100
 
-dist/
-build/
-*.egg-info/
+# Windows
+Thumbs.db*
+ehthumbs*.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Visual Studio
+.vscode/
+.history/
+*.code-workspace
