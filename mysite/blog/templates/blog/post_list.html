@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinterest-style User Profile</title>
+    <title>Blog Posts</title>
 
     <!-- Material-UI CDN Links -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -125,28 +125,30 @@
     </header>
 
     <nav>
-        <a href="#" class="waves-effect waves-light btn">Home</a>
-        <!-- <a href="#" class="waves-effect waves-light btn">Explore</a>
-        <a href="#" class="waves-effect waves-light btn">Profile</a> -->
+        <a href="/" class="waves-effect waves-light btn">Home</a>
         <a href="#" class="waves-effect waves-light btn">Settings</a>
     </nav>
 
     <div class="container">
-        <h2>User's Blog Posts</h2>
 
-        <!-- Blog Post 1 -->
-        <div class="blog-post">
-            <h3>Exciting Blog Post Title 1</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
-            <div class="user-details">
-                <span>Posted by Admin</span>
-                <span>on December 10, 2023</span>
+        {% for post in posts %}
+
+            <div class="blog-post">
+                <h3><a href="">{{ post.title }}</a></h3>
+                <p>{{ post.text|linebreaksbr }}</p>
+                <div class="user-details">
+                    <span>Posted by {{ post.author }}</span>
+                    <span>{{ post.published_date }} </span>
+                </div>
             </div>
-        </div>
+
+        {% endfor %}
+
+
+        
 
         <!-- Blog Post 2 -->
-        <div class="blog-post">
+        <!-- <div class="blog-post">
             <h3>Exciting Blog Post Title 2</h3>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat.</p>
@@ -154,7 +156,7 @@
                 <span>Posted by Admin</span>
                 <span>on December 12, 2023</span>
             </div>
-        </div>
+        </div> -->
     </div>
 </body>
 
